@@ -6,7 +6,8 @@ category: "Blockchain"
 author: "Carlos Ruiz"
 authorRole: "Blockchain Developer"
 authorImage: "https://randomuser.me/api/portraits/men/55.jpg"
-imageUrl: "https://www.krea.ai/api/img?f=webp&i=https%3A%2F%2Fgen.krea.ai%2Fimages%2F4191bf06-b593-4920-abbf-d2c6e014c26d.png"
+---
+![logo-post](/solom.png)
 ---
 
 **Web3** propone un internet basado en tecnología blockchain, donde los usuarios tienen control de sus datos y activos digitales.  

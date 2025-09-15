@@ -1,5 +1,6 @@
 import { getAllPosts } from "@/lib/posts";
 import Link from "next/link";
+import Image from "next/image";
 
 export default async function BlogPage() {
     const posts = await getAllPosts();
@@ -24,7 +25,7 @@ export default async function BlogPage() {
                             <div className="relative w-full">
                                 <img
                                     alt=""
-                                    src={post.frontmatter.imageUrl}
+                                    src= "/logo.png"
                                     className="aspect-video w-full rounded-2xl bg-gray-800 object-cover sm:aspect-2/1 lg:aspect-3/2"
                                 />
                                 <div className="absolute inset-0 rounded-2xl inset-ring inset-ring-white/10" />
@@ -53,7 +54,9 @@ export default async function BlogPage() {
                                     </p>
                                 </div>
                                 <div className="relative mt-8 flex items-center gap-x-4 justify-self-end">
-                                    <img
+                                    <Image
+                                        width={40}
+                                        height={40}
                                         alt=""
                                         src={post.frontmatter.authorImage}
                                         className="size-10 rounded-full bg-gray-800"

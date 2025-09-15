@@ -1,6 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import {getPostBySlug} from "@/lib/posts";
 import { InformationCircleIcon} from "@heroicons/react/16/solid";
+import Image from "next/image";
 
 export default async function PostPage({ params }: { params: { slug: string } }) {
     const post =   getPostBySlug(params.slug);
@@ -19,7 +20,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
                 </div>
                 {post.frontmatter.image && (
                     <figure className="mt-16">
-                        <img
+                        <Image
                             alt={post.frontmatter.title}
                             src={post.frontmatter.image}
                             className="aspect-video rounded-xl bg-gray-800 object-cover"

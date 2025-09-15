@@ -7,7 +7,6 @@ export interface Frontmatter {
     author: string
     authorRole: string
     authorImage: string
-    imageUrl: string
 }
 
 export interface Post {
