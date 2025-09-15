@@ -3,7 +3,7 @@ import {getPostBySlug} from "@/lib/posts";
 import { InformationCircleIcon} from "@heroicons/react/16/solid";
 import Image from "next/image";
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
+export default function PostPage({ params }: { params: { slug: string } }) {
     const post =   getPostBySlug(params.slug);
 
     return (
@@ -21,6 +21,8 @@ export default async function PostPage({ params }: { params: { slug: string } })
                 {post.frontmatter.image && (
                     <figure className="mt-16">
                         <Image
+                            width={40}
+                            height={40}
                             alt={post.frontmatter.title}
                             src={post.frontmatter.image}
                             className="aspect-video rounded-xl bg-gray-800 object-cover"
