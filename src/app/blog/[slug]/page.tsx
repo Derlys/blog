@@ -1,10 +1,17 @@
 import ReactMarkdown from "react-markdown";
-import {getPostBySlug} from "@/lib/posts";
-import { InformationCircleIcon} from "@heroicons/react/16/solid";
+import { getPostBySlug } from "@/lib/posts";
+import { InformationCircleIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
 
-export default function PostPage({ params }: { params: { slug: string } }) {
-    const post =   getPostBySlug(params.slug);
+type Props = {
+    params: {
+        slug: string;
+    };
+};
+
+export default async function PostPage({ params }: Props) {
+    const resolvedParams = await (params as any);
+    const post = await getPostBySlug(resolvedParams.slug);
 
     return (
         <div className="bg-gray-900 px-6 py-32 lg:px-8">
@@ -21,8 +28,8 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                 {post.frontmatter.image && (
                     <figure className="mt-16">
                         <Image
-                            width={40}
-                            height={40}
+                            width={800}
+                            height={400}
                             alt={post.frontmatter.title}
                             src={post.frontmatter.image}
                             className="aspect-video rounded-xl bg-gray-800 object-cover"

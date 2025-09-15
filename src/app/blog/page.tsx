@@ -2,8 +2,8 @@ import { getAllPosts } from "@/lib/posts";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function BlogPage() {
-    const posts =  getAllPosts();
+export default async function BlogPage() {
+    const posts = await getAllPosts();
 
     return (
         <div className="bg-gray-900 py-24 sm:py-32">
@@ -23,9 +23,11 @@ export default function BlogPage() {
                             className="flex flex-col items-start justify-between"
                         >
                             <div className="relative w-full">
-                                <img
+                                <Image
                                     alt=""
-                                    src= "/logo.png"
+                                    width={480}
+                                    height={270}
+                                    src="/logo.png"
                                     className="aspect-video w-full rounded-2xl bg-gray-800 object-cover sm:aspect-2/1 lg:aspect-3/2"
                                 />
                                 <div className="absolute inset-0 rounded-2xl inset-ring inset-ring-white/10" />
@@ -39,8 +41,8 @@ export default function BlogPage() {
                                         {post.frontmatter.date}
                                     </time>
                                     <span className="relative z-10 rounded-full bg-gray-800/60 px-3 py-1.5 font-medium text-gray-300">
-                    {post.frontmatter.category}
-                  </span>
+                                        {post.frontmatter.category}
+                                    </span>
                                 </div>
                                 <div className="group relative grow">
                                     <h3 className="mt-3 text-lg/6 font-semibold text-white group-hover:text-gray-300">
